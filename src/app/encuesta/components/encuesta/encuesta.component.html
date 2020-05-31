@@ -1,0 +1,29 @@
+<div class="loading-indicator" *ngIf="loadingSpinner">
+    <mat-progress-spinner mode="indeterminate" color="primary"></mat-progress-spinner>
+</div>
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Encuesta</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="encuestaForm" (ngSubmit)="registrarEncuesta()" class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Ingrese su correo electronico</mat-label>
+              <input matInput formControlName="email" placeholder="Favor ingresar su correo electronico" value="">
+            </mat-form-field>
+            <ul>
+                <li *ngFor="let encuesta of formatoEncuesta.preguntas">
+                    <strong>{{ encuesta.descripcionPregunta }}:</strong>
+                    <div *ngFor="let respuesta of encuesta.respuestas">
+                        <input type="radio" value="{{encuesta.preguntaId}}-{{respuesta.id}}" formControlName="respuesta">
+                            <span>{{respuesta.descripcion}}</span>
+                    </div>
+                </li>
+            </ul>
+            <section>
+                <button mat-raised-button color="primary" type="submit" [disabled]="!encuestaForm.valid">Enviar</button>
+            </section>
+        </form>
+    </mat-card-content>
+  </mat-card>

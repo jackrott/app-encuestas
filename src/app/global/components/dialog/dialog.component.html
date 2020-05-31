@@ -1,0 +1,10 @@
+<section class="mat-typography">
+	<h2 mat-dialog-title>{{data.title}}</h2>
+	<mat-dialog-content>
+		<div [innerHTML]="data.content"></div>
+	</mat-dialog-content>
+	<mat-dialog-actions>
+		<button mat-raised-button color="primary" [mat-dialog-close]="true" *ngIf="data.textOKButton">{{data.textOKButton}}</button>
+	  	<button mat-button mat-dialog-close>{{data.textCancelButton}}</button>
+	</mat-dialog-actions>
+</section>
