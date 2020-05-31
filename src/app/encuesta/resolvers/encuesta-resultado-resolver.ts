@@ -12,14 +12,6 @@ export class EncuestaResultadoResolver implements Resolve<any> {
   
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
     return this.encuestaService.getResultadoEncuesta(1)
-    .pipe(map(
-      res => { 
-      console.log(res)
-      return res },
-      error => {
-        console.log(error)
-      }
-      
-      ));
+    .pipe(map(res => { return res }));
   }
 }

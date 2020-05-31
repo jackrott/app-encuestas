@@ -41,7 +41,5 @@ export class ResultadosComponent implements OnInit {
         datasource: datasrc
       });
     }
-
-    console.info(this.dataSourcesGrid);
   }
 }
