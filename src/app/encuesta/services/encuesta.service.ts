@@ -13,9 +13,9 @@ export class EncuestaService {
   private DOMAIN_BACKEND: string = 'http://localhost:8080/';
 
   /** Cuerpo de la encuesta */
-  getFormatoEncuesta(idEncuesta: number): Observable<[]> {
+  getFormatoEncuesta(idEncuesta: number): Observable<any[]> {
     const url = this.DOMAIN_BACKEND + "encuestas/" + idEncuesta + "/formato";
-    return this.http.get<[]>(url);
+    return this.http.get<any[]>(url);
   }
 
   getResultadoEncuesta(idEncuesta: number): Observable<[]> {

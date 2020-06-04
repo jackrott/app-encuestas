@@ -33,12 +33,10 @@ describe('EncuestaComponent', () => {
   const fakeActivatedRoute = {
     snapshot: {
       data: {
-        "formularioEncuesta": this.formatoEncuesta
+        "formularioEncuesta": formatoEncuesta
       }
     }
   } as unknown as ActivatedRoute;
-
-  
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
